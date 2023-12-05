@@ -63,7 +63,7 @@ Given the following array, loop over the data to display three HornedBeast compo
 }]
 ```
 ### Submission Instructions
-- [ ]Complete your Feature Tasks for the day.
+- [ ] Complete your Feature Tasks for the day.
 - [ ] Run your Lighthouse Accessibility report looking for a score of 65 or higher. Make adjustments as needed.
 - [ ] Create a Pull Request (PR) back to the main branch of your repository.
 - [ ] Submit your assignment as a link to your PR, and a comment describing how much time you spent on the lab.
