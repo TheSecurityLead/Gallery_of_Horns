@@ -19,7 +19,7 @@ Complete the following steps to setup your repository:
 * Create a Branch and begin your work. As always, ACP often.
 * Your App component should render a Header, Footer and Gallery component, each of which is defined in their own files.
 
-* Your Header component needs to have an \<h1\> with a title.
+* Your Header component needs to have an \<\h\1\> with a title.
 
 * Your Footer component needs to contain your name as the author.
 
