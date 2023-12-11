@@ -40,3 +40,44 @@
 .read-the-docs {
   color: #888;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.hornedbeast {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: white;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hornedbeast:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hornedbeast img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.hornedbeast h2 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.hornedbeast p {
+  font-size: 0.9em;
+  color: #666;
+}
