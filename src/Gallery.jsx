@@ -1,26 +1,26 @@
-// import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
+import PropTypes from 'prop-types'; // Import PropTypes
 import Hornedbeast from './Hornedbeast';
-import jsonData from './data.json';
-import { Container, Row, Col } from 'react-bootstrap';
 
-function Gallery() {
+
+function Gallery({ beasts, onBeastClick }) {
     return (
-        <Container>
-            <Row>
-                {jsonData.map((beast) => (
-                    <Col sm={12} md={6} lg={4} key={beast._id}>
-                        <Hornedbeast 
-                            beast={{ 
-                                title: beast.title, 
-                                image_url: beast.image_url, 
-                                description: beast.description 
-                            }} 
-                        />
-                    </Col>
-                ))}
-            </Row>
-        </Container>
+        <div className="gallery">
+            {beasts.map(beast => (
+                <Hornedbeast 
+                    key={beast._id}
+                    beast={beast}
+                    onClick={() => onBeastClick(beast)}
+                />
+            ))}
+        </div>
     );
 }
+
+
+Gallery.propTypes = {
+    beasts: PropTypes.array.isRequired, 
+    onBeastClick: PropTypes.func.isRequired, 
+};
 
 export default Gallery;

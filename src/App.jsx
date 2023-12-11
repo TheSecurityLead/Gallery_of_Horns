@@ -1,18 +1,25 @@
-//  React from 'react'
-import Header from './Header';
-import Footer from './Footer';
+import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
 import Gallery from './Gallery';
+import SelectedBeast from './SelectedBeast';
+import jsonData from './data.json'; // Import the JSON data
 
+function App() {
+  const [selectedBeast, setSelectedBeast] = useState(null);
 
-function App () {
+  const handleBeastSelection = (beast) => {
+    setSelectedBeast(beast);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedBeast(null);
+  };
+
   return (
-<>
-<Header/>
-<Gallery/>
-<Footer/>
-</>
-  )
+    <>
+      <Gallery beasts={jsonData} onBeastClick={handleBeastSelection} />
+      <SelectedBeast beast={selectedBeast} onClose={handleCloseModal} />
+    </>
+  );
 }
-
 
 export default App;

@@ -1,26 +1,25 @@
-/* eslint-disable react/prop-types */
+import React from 'react'; // eslint-disable-line no-unused-vars
+import PropTypes from 'prop-types';
 
-import React, { useState } from 'react';
-
-function Hornedbeast(props) {
-    const [favorites, setFavorites] = useState(0);
-
-    const handleFavorite = () => {
-        setFavorites(favorites + 1);
-    };
-
+function Hornedbeast({ beast, onClick }) {
     return (
-        <>
-            <h2>{props.beast.title}</h2>
-            <img src={props.beast.image_url} alt={props.beast.title} onClick={handleFavorite}></img>
-            <p>{props.beast.description}</p>
-            <p>
-                <span onClick={handleFavorite} style={{cursor: 'pointer'}}>
-                    ❤ {favorites}
-                </span> Favorites
-            </p>
-        </>
+        <div className="hornedbeast" onClick={onClick}>
+            <h2>{beast.title}</h2>
+            <img src={beast.image_url} alt={beast.title} />
+            <p>{beast.description}</p>
+            
+        </div>
     );
 }
+
+// Define propTypes for Hornedbeast
+Hornedbeast.propTypes = {
+    beast: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired
+    }),
+    onClick: PropTypes.func
+};
 
 export default Hornedbeast;
